@@ -462,7 +462,7 @@ span.pagelinks {
 	float:left;
 	clear:left;
 	padding-top:0px;
-	padding-bottom:50px;
+	padding-bottom:30px;
 	cursor: pointer;
 	
 }
@@ -491,7 +491,14 @@ span.pagelinks {
 #sub_newNavigation ul li a.active, #sub_newNavigation ul li a:hover {
 	color:green;
 }
-
+#sub_navigation {
+	float:left;
+	clear:left;
+	padding-top:0px;
+	padding-bottom:40px;
+	cursor: pointer;
+	
+}
 #sub_navigation ul li a {
 	font-size:14px;
 	font-weight:bold;
@@ -542,7 +549,7 @@ h1#logo a {
 	float:left;
 	width:240px;
 	height:70px;
-	background:url("webapp/images/fact.png") no-repeat 0 0;
+	background:url(../images/fact.png) no-repeat 0 0;
 	font-size:0;
 	line-height:0;
 	text-indent:-4000px;
@@ -644,20 +651,20 @@ input:focus {
 .rating p {
 	float:left;
 	font-size:10px;
-	color:#fff;
+	color:#000;
 	font-weight:bold;
 }
 .rating .stars {
 	float:left;
 	width:60px;
 	height:11px;
-	background:url('stars.gif') no-repeat 0 0;
+	background:url(../images/stars.gif) no-repeat 0 0;
 	margin-left:2px;
 }
 .rating .stars-in {
 	width:48px;
 	display:inline;
-	background:url('stars.gif') no-repeat 0 bottom;
+	background:url(../images/stars.gif) no-repeat 0 bottom;
 	position:absolute;
 	height:11px;
 	font-size:0;
