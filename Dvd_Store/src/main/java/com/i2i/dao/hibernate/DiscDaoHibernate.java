@@ -41,14 +41,12 @@ public class DiscDaoHibernate extends GenericDaoHibernate<Disc,Long> implements 
      */
 	@Override
 	public void insertDisc(Disc disc) throws UserApplicationException {
-	   	try {
-    		System.out.println("Entering into insert Disc");
-    		System.out.println(disc);
+	   	try {    		
     		getSession().saveOrUpdate(disc);
         } catch (HibernateException e) {
             throw new UserApplicationException("Unable to insert disc",e);
         } finally {
-            //closeSession(session);
+        	getSession().flush();
         }        
     }
 
@@ -69,7 +67,7 @@ public class DiscDaoHibernate extends GenericDaoHibernate<Disc,Long> implements 
         } catch(HibernateException e) {
             throw new UserApplicationException("unable to list disc",e);
         } finally {
-           // closeSession(session); 
+        	session.flush();
         } 
 	}
 
@@ -82,7 +80,7 @@ public class DiscDaoHibernate extends GenericDaoHibernate<Disc,Long> implements 
         } catch(HibernateException e) { 
             throw new UserApplicationException("unable to find disc having id: "+id);
         } finally {
-            //closeSession(session);
+        	session.flush();
         }
 
 	}
@@ -101,61 +99,41 @@ public class DiscDaoHibernate extends GenericDaoHibernate<Disc,Long> implements 
 
 	@Override
 	public void allocateCategoryToDiscs(Disc disc, Category category) throws UserApplicationException {
-    	Session session = getSession();
-    	//Transaction transaction = null;
-        try {
-        	System.out.println("Enter into Category allocation");
-        	System.out.println(disc);
-        	System.out.println(category);
-        	//transaction = session.beginTransaction();
+        Session session = getSession();    	
+        try {        	
             disc.setCategory(category);
-            session.update(disc);
-            System.out.println("Category allocated");
-           // transaction.commit();
-        }catch(HibernateException e) {
+            session.update(disc);            
+        } catch(HibernateException e) {
             throw new UserApplicationException("unable to allocate category");
-        }finally {
-            //closeSession(session); 
-      }
-
-		
+        } finally {
+        	session.flush();
+        }		
 	}
 
 	@Override
 	public void allocateLanguageToDiscs(Disc disc, Language language) throws UserApplicationException {
-    	Session session = getSession();
-    	//Transaction transaction = null;
-        try {
-        	System.out.println("Enter into Language allocation");
-        	//transaction = session.beginTransaction();
+        Session session = getSession();    	
+        try {        	
             disc.setLanguage(language);
-            session.update(disc);
-            System.out.println("Language allocated");
-            //transaction.commit();
-        }catch(HibernateException e) {
+            session.update(disc);            
+        } catch(HibernateException e) {
             throw new UserApplicationException("unable to allocate language");
-        }finally {
-            //closeSession(session); 
-      }
-
-		
+        } finally {
+        	session.flush();
+        }	
 	}
 
 	@Override
 	public void updateStock(Disc disc, int stock) throws UserApplicationException {
-    	Session session = getSession();
-    	//Transaction transaction = null;
+        Session session = getSession();
         try {
-        	//transaction = session.beginTransaction();
             disc.setStock(stock);
             session.update(disc);
-            //transaction.commit();
         } catch(HibernateException e) {
             throw new UserApplicationException("unable to modified Stock");
         } finally {
-            //closeSession(session); 
-        }    
-		
+        	session.flush();
+        }
 	}
 
 }

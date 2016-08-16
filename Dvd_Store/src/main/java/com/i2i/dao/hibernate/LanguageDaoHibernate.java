@@ -21,9 +21,9 @@ public class LanguageDaoHibernate extends GenericDaoHibernate<Language, Long> im
      */  
 
 	
-	   public LanguageDaoHibernate() {
-	        super(Language.class);
-	    }
+    public LanguageDaoHibernate() {
+	    super(Language.class);
+	}
 
 	
 
@@ -31,14 +31,14 @@ public class LanguageDaoHibernate extends GenericDaoHibernate<Language, Long> im
      * {@inheritDoc}
      */
     public Language saveLanguage(Language language) throws UserApplicationException {
-       try {
-        getSession().saveOrUpdate(language);        
-        getSession().flush();
-        return language;
-       } catch (HibernateException e) {
-    	   throw new UserApplicationException("Unable to inset the language "+language,e);
-       }
-       
+        try {
+            getSession().saveOrUpdate(language);        
+            return language;
+        } catch (HibernateException e) {
+    	    throw new UserApplicationException("Unable to inset the language "+language,e);
+        } finally {
+            getSession().flush();
+        }       
     }
 
     /**
@@ -52,9 +52,9 @@ public class LanguageDaoHibernate extends GenericDaoHibernate<Language, Long> im
     @Override
     public Language save(Language language) {
         try {
-			return this.saveLanguage(language);
+		    return this.saveLanguage(language);
 		} catch (UserApplicationException e) {			
-			e.printStackTrace();
+		    e.printStackTrace();
 		}
         return null;
     }
@@ -68,7 +68,9 @@ public class LanguageDaoHibernate extends GenericDaoHibernate<Language, Long> im
             return languages;        
         } catch(HibernateException e) {
             throw new UserApplicationException("Unable to list the languages ",e);
-        } 
+        } finally {
+        	session.flush();
+        }
 		
 	}
 
@@ -76,16 +78,14 @@ public class LanguageDaoHibernate extends GenericDaoHibernate<Language, Long> im
 
 	@Override
 	public Language findLanguageById(int id) throws UserApplicationException{
-    	Session session = getSession();
+        Session session = getSession();
     	try {
-    		System.out.println("Entering into Language find");
             Language language = (Language)session.get(Language.class, id);
-            System.out.println(language);
             return language;
         } catch(HibernateException e) {
             throw new UserApplicationException("unable to find language having id: "+id);
         } finally {
-//            closeSession(session);
+            session.flush();
         }
 	}
 
@@ -93,15 +93,13 @@ public class LanguageDaoHibernate extends GenericDaoHibernate<Language, Long> im
 
 	@Override
 	public void removeLanguageById(int id) throws UserApplicationException {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 
 
 
 	@Override
 	public void updateLanguageById(Language language) throws UserApplicationException {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 }

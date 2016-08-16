@@ -49,15 +49,12 @@ public class CartDaoHibernate extends GenericDaoHibernate<Cart,Long> implements 
 	
 	public void insertCart(Cart cart) throws UserApplicationException {
 		Session session = getSession();
-    	//Transaction transaction = null;
         try {
-          //  transaction = session.beginTransaction();
             session.save(cart); 
-            //transaction.commit();
         } catch (HibernateException e) {
             throw new UserApplicationException("unable to insert Cart",e);
         } finally {
-            //closeSession(session);
+        	session.flush();
         }      
 	}
 	
@@ -75,7 +72,7 @@ public class CartDaoHibernate extends GenericDaoHibernate<Cart,Long> implements 
         try {         
             return session.createQuery("FROM Cart").list();           
         } finally {
-           // closeSession(session);
+        	session.flush();
         }        
     }
 	
@@ -96,7 +93,7 @@ public class CartDaoHibernate extends GenericDaoHibernate<Cart,Long> implements 
         } catch (HibernateException e) {            
             throw new UserApplicationException("Could not find for this cartId "+cartId, e);
         } finally {
-            //closeSession(session);        
+        	session.flush();
         }       
     }
 	
@@ -112,16 +109,13 @@ public class CartDaoHibernate extends GenericDaoHibernate<Cart,Long> implements 
      */	
 	public void deleteCartById(int cartId) throws UserApplicationException {
 		Session session = getSession();
-        //Transaction transaction = null;               
         try {              
-          //  transaction = session.beginTransaction();                                         
             Cart cart = (Cart)session.get(Cart.class, cartId);    
             session.delete(cart); 
-            //transaction.commit();                 
         } catch (HibernateException e) {            
-           throw new UserApplicationException("Could not delete for this cartId "+cartId, e);
+            throw new UserApplicationException("Could not delete for this cartId "+cartId, e);
         } finally {
-           //closeSession(session);
+            session.flush();
         }    
     
 	}
@@ -136,19 +130,16 @@ public class CartDaoHibernate extends GenericDaoHibernate<Cart,Long> implements 
      * @throws UserApplicationException
      *         If there is error in deleting Cart object.    
      */		
-	public void insertDiscToCart(Disc disc, Cart cart) throws UserApplicationException {
-		Session session = getSession();
-        //Transaction transaction = null;          
+    public void insertDiscToCart(Disc disc, Cart cart) throws UserApplicationException {
+	    Session session = getSession();
         try {
-        	//transaction = session.beginTransaction();                                         
-        	cart.setDisc(disc);
+            cart.setDisc(disc);
         	session.update(cart); 
-        	//transaction.commit();
         } catch (HibernateException e) {            
             throw new UserApplicationException("Could not Add for this Disc to Cart "+disc.getName(), e);
-         } finally {
-            //closeSession(session);
-         } 
+        } finally {
+            session.flush();
+        } 
 	}
 	
 	/**
@@ -161,22 +152,16 @@ public class CartDaoHibernate extends GenericDaoHibernate<Cart,Long> implements 
      *        which can be the purchaseOrder object for the cart
      * @throws UserApplicationException
      *         If there is error in deleting Cart object.    
-     */		
-	
-	public void updateCartByPurchaseOrder(Cart cart,PurchaseOrder purchaseOrder) throws UserApplicationException {
-		System.out.println(cart);
-		System.out.println(purchaseOrder.getId());
-		Session session = getSession();
-        //Transaction transaction = null;          
-        try {
-        	//transaction = session.beginTransaction();                                         
-        	cart.setPurchaseOrder(purchaseOrder);
-        	session.update(cart); 
-        	//transaction.commit();
+     */	
+	public void updateCartByPurchaseOrder(Cart cart,PurchaseOrder purchaseOrder) throws UserApplicationException {		
+	    Session session = getSession();         
+        try {        	
+            cart.setPurchaseOrder(purchaseOrder);
+        	session.update(cart);         	
         } catch (HibernateException e) {            
             throw new UserApplicationException("Could not Update for this Cart "+cart.getId(), e);
-         } finally {
-            //closeSession(session);
-         } 	
+        } finally {
+        	session.flush();
+        } 	
 	}
 }

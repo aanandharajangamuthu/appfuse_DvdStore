@@ -41,7 +41,7 @@ public class PurchaseOrderDaoHibernate extends GenericDaoHibernate<PurchaseOrder
         try {         
             return session.createQuery("FROM PurchaseOrder").list();           
         } finally {
-           // closeSession(session);
+            session.flush(); 
         }        
     }
 	
@@ -63,7 +63,7 @@ public class PurchaseOrderDaoHibernate extends GenericDaoHibernate<PurchaseOrder
         } catch (HibernateException e) {            
             throw new UserApplicationException("Could not find for this purchaseOrderId "+purchaseOrderId, e);
         } finally {
-            //closeSession(session);        
+        	session.flush(); 
         }       
     }	
 	
@@ -80,48 +80,38 @@ public class PurchaseOrderDaoHibernate extends GenericDaoHibernate<PurchaseOrder
 	@Override
 	public void deletePurchaseOrderById(int purchaseOrderId) throws UserApplicationException {
 		Session session = getSession();
-       // Transaction transaction = null;               
         try {              
-         //   transaction = session.beginTransaction();                                         
             PurchaseOrder purchaseOrder = (PurchaseOrder)session.get(PurchaseOrder.class, purchaseOrderId);    
             session.delete(purchaseOrder); 
-           // transaction.commit();                 
         } catch (HibernateException e) {            
            throw new UserApplicationException("Could not delete for this purchaseOrder Id:"+purchaseOrderId, e);
         } finally {
-           //closeSession(session);
+        	session.flush();
         }    
     
 	}
 	
 	@Override
 	public void updatePurchaseOrder(PurchaseOrder purchaseOrder) throws UserApplicationException {
-		Session session = getSession();
-        //Transaction transaction = null;
-        try {            
-          //  transaction = session.beginTransaction();            
+		Session session = getSession();        
+        try {         
 	        session.update(purchaseOrder);  
-            //transaction.commit();          
         } catch (HibernateException e) {            
             throw new UserApplicationException("could not update for this Purchase Id "+purchaseOrder.getId(), e);
         } finally {
-            //closeSession(session);
+        	session.flush();
         }
 	}
 	
 	@Override
 	public void addPurchaseOrder(PurchaseOrder purchaseOrder) throws UserApplicationException {
 		Session session = getSession();
-    	//Transaction transaction = null;
         try {
-        	System.out.println("PurchaseOrderId :"+purchaseOrder.getId());
-          //  transaction = session.beginTransaction();
             session.save(purchaseOrder); 
-            //transaction.commit();
         } catch (HibernateException e) {
             throw new UserApplicationException("unable to Add for this Purchase Id "+purchaseOrder.getId(),e);
         } finally {
-            //closeSession(session);
+        	session.flush();
         }      	
 	}    
 }

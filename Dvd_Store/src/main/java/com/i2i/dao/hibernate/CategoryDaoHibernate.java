@@ -47,32 +47,15 @@ public class CategoryDaoHibernate extends GenericDaoHibernate<Category,Long> imp
      *      
      */
     public void insertCategory(Category category) throws UserApplicationException {
-    	//Session session = getSession();
-    	//Transaction transaction = null;
-    	try {
-    		System.out.println("Entering into insert category");
-    		System.out.println(category);
-    		getSession().saveOrUpdate(category);
-           /* transaction = session.beginTransaction();
-            session.save(category); 
-            transaction.commit();*/
-            System.out.println("Category saved into database");
+    	try {    		
+    		getSession().saveOrUpdate(category);           
         } catch (HibernateException e) {
             throw new UserApplicationException("Unable to insert category",e);
         } finally {
-            //closeSession(session);
+        	getSession().flush();
         }        
-    }
-
-    
-    /**
-     * {@inheritDoc}
-     */
-  /*  @SuppressWarnings("unchecked")
-    public List<Category> getCategories() {
-        Query qry = getSession().createQuery("from User u order by upper(u.username)");
-        return qry.list();
-    }*/
+    }  
+  
 
     /**
      * {@inheritDoc}
@@ -99,13 +82,12 @@ public class CategoryDaoHibernate extends GenericDaoHibernate<Category,Long> imp
 	public List<Category> listOfCategories() throws UserApplicationException {
     	Session session = getSession();
     	try {
-    		System.out.println("Entering into category List");
             List<Category> categories = session.createQuery("FROM Category").list();
             return categories;        
         } catch(HibernateException e) {
             throw new UserApplicationException("Unable to list the categories",e);
         } finally {
-           // closeSession(session); 
+        	session.flush();
         } 
 
 	}
@@ -114,16 +96,13 @@ public class CategoryDaoHibernate extends GenericDaoHibernate<Category,Long> imp
 	public Category findCategoryById(int id) throws UserApplicationException {
     	Session session = getSession();
     	try {
-    		System.out.println("Entering Find Category");
             Category category = (Category)session.get(Category.class, id);
-            System.out.println(category);
             return category;
         } catch(HibernateException e) { 
             throw new UserApplicationException("unable to find category having id: "+id);
         } finally {
-//            closeSession(session);
+        	session.flush();
         }
-
 	}
 
 	@Override
