@@ -8,6 +8,7 @@ import com.i2i.model.Category;
 import com.i2i.model.Disc;
 import com.i2i.model.Language;
 import com.i2i.model.PurchaseOrder;
+import com.i2i.model.Role;
 import com.i2i.model.User;
 import com.i2i.service.CartService;
 import com.i2i.service.CategoryService;
@@ -23,6 +24,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,6 +95,25 @@ public class UserController {
             model.addAttribute(userManager.getUsers());
         }
         return new ModelAndView("admin/userList", model.asMap());
+    }
+    
+    
+    @RequestMapping("/home")
+    public ModelAndView handleHomePage(final HttpServletRequest request) {       
+        String userName = request.getRemoteUser();
+		System.out.println(userName);
+		currentUser = userService.getUserByUsername(userName);		
+		System.out.println(currentUser);
+		if(null != currentUser){
+		    Set<Role> roles = currentUser.getRoles();
+			for(Role role : roles){
+			    if("ROLE_ADMIN".equals(role.getName())){
+				    return new ModelAndView("adminPage");
+			    }
+		    }
+		}
+		return new ModelAndView("home");
+	
     }
     
  // Category Controller

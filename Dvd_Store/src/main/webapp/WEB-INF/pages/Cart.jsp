@@ -18,29 +18,24 @@
         <br><br>
         <c:if test="${!empty cart}">            
         <table border="1" bgcolor="black" width="600px">
-            <tr style="background-color: green;color: white;text-align: center;" height="40px">
-           <!--      <td>Cart Id</td> --> 
+            <tr style="background-color: green;color: white;text-align: center;" height="40px">          
                 <td>Movie Name</td>
                 <td>Director</td>
                 <td>Poster</td>
                 <td>Quantity</td>
                 <td>Total price<td>
-           <!--      <td>Disc Id</td> -->
-
             </tr>
             <c:forEach items="${cart}" var="cart">
                 <form:form id="cartId" method="post" action="deleteCart.html">
                 <input type="hidden" id="discId" name="discId" value="${cart.disc.getId()}"/>
                 <input type="hidden" id="id" name="id" value="${cart.id}"/>
                     <tr style="background-color:white;color: black;text-align: center;" height="30px" >
-                  <!--      <td><input type="hidden" id="id" name="id" value="${cart.id}"/>${cart.id}</td> -->
                         <td><c:out value="${cart.disc.getName()}"/></td>
                         <td><c:out value="${cart.disc.getDirectorName()}"/></td>
                         <td><img src="<c:out value="${cart.disc.getImageUrl()}"/>" alt="image" border=3 height=100 width=100></img></td>
                         <td><input type="hidden" id="quantity" name="quantity" value="${cart.quantity}"/>${cart.quantity}</td>
                         <td><c:out value="${cart.totalPrice}"/></td>
-                  <!--       <td><input type="hidden" id="discId" name="discId" value="${cart.disc.getId()}"/>${cart.disc.getId()}</td> -->
-                        <td><input type="submit" value="Delete"></td> -->
+                        <td><input type="submit" value="Delete"></td> 
                     </tr>
                 </form:form>
             </c:forEach>

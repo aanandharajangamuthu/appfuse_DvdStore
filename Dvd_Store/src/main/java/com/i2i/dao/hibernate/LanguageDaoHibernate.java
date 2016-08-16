@@ -18,9 +18,7 @@ public class LanguageDaoHibernate extends GenericDaoHibernate<Language, Long> im
 
 	/**
      * Constructor that sets the entity to User.class.
-     */  
-
-	
+     */	
     public LanguageDaoHibernate() {
 	    super(Language.class);
 	}
@@ -59,7 +57,13 @@ public class LanguageDaoHibernate extends GenericDaoHibernate<Language, Long> im
         return null;
     }
 
-
+    /** 
+     * Retrieves the list of languages available in the database
+     * @return languages
+     *         List of languages  
+     * @throws UserApplicationException 
+     *         if there is an error occurs while retrieve
+     */
 	@Override
 	public List<Language> retrieveAllLanguages() throws UserApplicationException {
 		Session session =  getSession();
@@ -75,7 +79,15 @@ public class LanguageDaoHibernate extends GenericDaoHibernate<Language, Long> im
 	}
 
 
-
+	/**
+     * Finds & retrieves the particular language detail from the database
+     * @param id
+     *        by which the language can be retrieved 
+     * @return language
+     *         Language object contains its attributes
+     * @throws UserApplicationException 
+     *         if there is any error occurs while retrieving  
+     */
 	@Override
 	public Language findLanguageById(int id) throws UserApplicationException{
         Session session = getSession();

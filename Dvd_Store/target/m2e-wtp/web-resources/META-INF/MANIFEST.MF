@@ -3,7 +3,7 @@ Implementation-Vendor: Pivotal Software, Inc.
 Implementation-Title: AppFuse Spring MVC Application
 Implementation-Version: 1.0-SNAPSHOT
 Implementation-Vendor-Id: com.i2i
-Build-Jdk: 1.7.0_80
+Build-Jdk: 1.7.0_101
 Built-By: ideas2it
 Created-By: Maven Integration for Eclipse
 
