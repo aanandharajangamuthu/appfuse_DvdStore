@@ -15,19 +15,11 @@
   <h1 id="logo"><a href="#">Fact</a></h1>
  <i><h2 style="color:green">Be a Fanatic and Admire Everything </h2></i>
  </div>
-     <div id="navigation">
-      <ul>              
-        <li><a href="user_home.html">Home</a></li>
-        <li><a href="https://in.bookmyshow.com/movies/comingsoon">COMING SOON</a></li>        
-        <li><div><a href="userIndex.jsp"><c:out value="${pageContext.request.remoteUser}"/></a></div></li>
-        <li><a href="signOut.html">Sign Out!!!</a></li>
-      </ul>
-    </div>
 <br><br><br><br><br><br>
 <div align="center" style="color: green;font-size: 30px">Order Details</div>
-<h1 style = "color:white">CustomerName : ${pageContext.request.remoteUser}</h1><br><br>
+<h1 style = "color:black">CustomerName : ${pageContext.request.remoteUser}</h1><br><br>
 <c:if test="${!empty order}">
-<p style = "color:white">Total Amount : <c:out value="${totalAmount}"/></p>
+<p style = "color:black">Total Amount : <c:out value="${totalAmount}"/></p>
 <br><br>
         <table border="1" bgcolor="black" width="600px">
 <tr style="background-color: green;color: white;text-align: center;" height="40px">

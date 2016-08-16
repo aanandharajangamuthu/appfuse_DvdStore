@@ -16,7 +16,6 @@
     <c:if test="${!empty disc}">
         <table border="1" bgcolor="black" width="600px">
         <tr style="background-color: green;color: white;text-align: center;" height="40px">
-            <td>Disc Id</td>
             <td>Disc Movie Name</td>
             <td>Director</td>
             <td>Actor</td>
@@ -29,7 +28,7 @@
         <c:forEach items="${disc}" var="disc">
             <form:form id="discId" modelAttribute="cart" method="post" action="buyDisc.html">
                 <tr style="background-color:white;color: black;text-align: center;" height="30px" >
-                    <td><input type="hidden" id="id" name="id" value="${disc.id}"/></td>
+                   <input type="hidden" id="id" name="id" value="${disc.id}"/>
                     <td><c:out value="${disc.name}"/></td>
                     <td><c:out value="${disc.directorName}"/></td>
                     <td><c:out value="${disc.actorName}"/></td>

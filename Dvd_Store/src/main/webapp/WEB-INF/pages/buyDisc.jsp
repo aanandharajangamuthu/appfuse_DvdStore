@@ -38,7 +38,7 @@
                 <p><input type="hidden" id="userName" name="userName" value="${pageContext.request.remoteUser}"/></p>
                 <i><strong><p><c:out value="${BuyDisc.name}"/></p><strong></i>
             </div>
-            <div style="color:white">
+            <div style="color:black">
                 <p> Director: <c:out value="${BuyDisc.directorName}"/><p>
                 <p> Actor: <c:out value="${BuyDisc.actorName}"/></p>
                 <p><input type="hidden" id="stock" name="stock" value="${BuyDisc.stock}"/>

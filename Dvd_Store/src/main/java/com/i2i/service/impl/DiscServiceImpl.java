@@ -61,7 +61,7 @@ public class DiscServiceImpl implements DiscService {
 
 	@Override
 	public void updateByDiscStock(Disc disc, int stock) throws UserApplicationException {
-		// TODO Auto-generated method stub
+		discDao.updateStock(disc,stock);
 		
 	}
 }

@@ -419,7 +419,7 @@ span.pagelinks {
 #navigation ul li a {
 	font-size:14px;
 	font-weight:bold;
-	color:#fff;
+	color:#000;
 	text-decoration:none;
 }
 #navigation ul li a.active, #navigation ul li a:hover {
@@ -495,7 +495,7 @@ span.pagelinks {
 #sub_navigation ul li a {
 	font-size:14px;
 	font-weight:bold;
-	color:#fff;
+	color:#000;
 	text-decoration:none;
 }
 #sub_navigation ul li a.active, #navigation ul li a:hover {
@@ -518,7 +518,7 @@ span.pagelinks {
 #sub-navigation ul li a {
 	font-size:14px;
 	font-weight:bold;
-	color:#fff;
+	color:#000;
 	line-height:24px;
 	text-decoration:none;
 }

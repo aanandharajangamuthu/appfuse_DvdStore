@@ -143,7 +143,18 @@ public class DiscDaoHibernate extends GenericDaoHibernate<Disc,Long> implements 
 
 	@Override
 	public void updateStock(Disc disc, int stock) throws UserApplicationException {
-		// TODO Auto-generated method stub
+    	Session session = getSession();
+    	//Transaction transaction = null;
+        try {
+        	//transaction = session.beginTransaction();
+            disc.setStock(stock);
+            session.update(disc);
+            //transaction.commit();
+        } catch(HibernateException e) {
+            throw new UserApplicationException("unable to modified Stock");
+        } finally {
+            //closeSession(session); 
+        }    
 		
 	}
 
