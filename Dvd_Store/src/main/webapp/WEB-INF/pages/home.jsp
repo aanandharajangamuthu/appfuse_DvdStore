@@ -22,7 +22,7 @@
     </div>
     <div id="sub-navigation">
     <ul>
-     <li><div class = "dropdown"><a href="movieList.html" target="iframe_a">Movies</a>
+     <li><div class = "dropdown"><a href="movieList.html">Movies</a>
      <div class="dropdown-content">
        <a href="tamilMovies.html" target="iframe_a">Tamil</a>
        <a href="englishMovies.html" target="iframe_a">English</a>

@@ -416,7 +416,7 @@ public class UserController {
 		 * @param discId
 		 * @param quantity
 		 * @return Cart page
-		 *         contains the cart details
+		 *         contains the cart detailscom.i2i.model.User@6b328d91[username=user,enabled=true,accountEx
 		 */
 		@RequestMapping("/deleteCart")
 		public ModelAndView deleteCart(@RequestParam("id") int id, @RequestParam("discId") int discId ,@RequestParam("quantity") int quantity) {
@@ -552,4 +552,254 @@ public class UserController {
 			}
 			return null;
 		}
+		
+		/**
+		 * <p>
+	     * This method used to show all movies. 
+	     * <p>
+		 * @return ModelAndView
+		 *         returns model to movies page.
+		 */
+		@RequestMapping(value="/movieList")
+		public ModelAndView getMovies() {
+			System.out.println("entering into movie");
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				System.out.println("Entering after map");
+				model.put("disc", discService.discList());
+				return new ModelAndView("movies", model);
+			} catch (UserApplicationException e) {
+				e.printStackTrace();
+				System.out.println(e);	
+			}
+			return null;
+	    }	
+		
+		/**
+		 * <p>
+	     * This method used to show only tamil movies from movies list. 
+	     * <p>
+		 * @return ModelAndView
+		 *         returns model to tamil page.
+		 */
+		@RequestMapping("/tamilMovies")
+		public ModelAndView getTamilMovies() {
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				model.put("disc", discService.discList());
+				return new ModelAndView("tamil", model);
+			} catch (UserApplicationException e) {
+				e.printStackTrace();
+				System.out.println(e);	
+			}
+		    return null;	
+	    }
+		
+		
+		/**
+		 * <p>
+	     * This method used to show only english movies from movies list. 
+	     * <p> 
+		 * @return ModelAndView
+		 *         returns model to english page.
+		 */
+		@RequestMapping("/englishMovies")
+		public ModelAndView getEnglishMovies() {
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				model.put("disc", discService.discList());
+				return new ModelAndView("english", model);
+			} catch (UserApplicationException e) {
+				e.printStackTrace();
+				System.out.println(e);	
+			}
+			return null;
+	    }
+		
+		/**
+		 * <p>
+	     * This method used to show only hindi movies from movies list. 
+	     * <p> 
+		 * @return ModelAndView
+		 *          returns model to hindi page. 
+		 */
+		@RequestMapping("/hindiMovies")
+		public ModelAndView getHindiMovies() {
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				model.put("disc", discService.discList());
+				return new ModelAndView("hindi", model);
+			} catch (UserApplicationException e) {
+				e.printStackTrace();
+				System.out.println(e);	
+			}
+			return null;
+	    }	
+		
+		/**
+		 * <p>
+	     * This method used to show songs list. 
+	     * <p>
+		 * @return ModelAndView
+		 *         returns model to songs page. 
+		 */
+		@RequestMapping("/songList")
+		public ModelAndView getSongs() {
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				model.put("disc", discService.discList());
+				return new ModelAndView("songs", model);
+			} catch (UserApplicationException e) {	
+				e.printStackTrace();
+				System.out.println(e);	
+			}
+			return null;
+	    }
+		
+		
+		/**
+		 * <p>
+	     * This method used to list only tamil songs list. 
+	     * <p>
+		 * @return ModelAndView
+		 *         returns model to tamilSong page. 
+		 */
+		@RequestMapping("/tamilSongs")
+		public ModelAndView getTamilSongs() {
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				model.put("disc", discService.discList());
+				return new ModelAndView("tamilSong", model);
+			} catch (UserApplicationException e) {
+				e.printStackTrace();
+				System.out.println(e);	
+				return null;
+			}		
+	    }
+		
+		/**
+		 * <p>
+	     * This method used to list only tamil songs list. 
+	     * <p> 
+		 * @return ModelAndView 
+		 *         returns model to hindiSong page. 
+		 */
+		@RequestMapping("/hindiSongs")
+		public ModelAndView getHindiSongs() {
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				model.put("disc", discService.discList());
+				return new ModelAndView("hindiSong", model);
+			} catch (UserApplicationException e) {
+				e.printStackTrace();
+				System.out.println(e);	
+			}
+			return null;
+	    }	
+
+		/**
+	     * <p>
+	     * This method used to list only english songs list. 
+	     * <p>     
+		 * @return ModelAndView
+		 *         returns model to englishSong page.
+		 */
+		@RequestMapping("/englishSongs")
+		public ModelAndView getEnglishSongs() {
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				model.put("disc", discService.discList());
+				return new ModelAndView("englishSong", model);
+			} catch (UserApplicationException e) {
+				e.printStackTrace();
+				System.out.println(e);
+				return null;
+			}
+			
+	    }	
+
+		/**
+		 * <p>
+	     * This method used to list all langauge shows. 
+	     * <p> 
+		 * @return ModelAndView 
+		 *         returns model to shows page.
+		 */
+		@RequestMapping("/showList")
+		public ModelAndView getShows() {
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				model.put("disc", discService.discList());
+				return new ModelAndView("shows", model);
+			} catch (UserApplicationException e) {
+				e.printStackTrace();
+				System.out.println(e);	
+				return null;
+			}
+			
+	    }
+		
+		/**
+		 * <p>
+	     * This method used to list the tamil tv shows. 
+	     * <p> 
+		 * @return ModelAndView 
+		 *         returns model to tamilTvShows page.
+		 */
+		@RequestMapping("/tamilShows")
+		public ModelAndView getTamilShows() {
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				model.put("disc", discService.discList());	
+				return new ModelAndView("tamilTvShows", model);
+			} catch (UserApplicationException e) {
+				e.printStackTrace();
+				System.out.println(e);	
+				return null;
+			}
+			
+	    }
+		
+		
+		/**
+		 * <p>
+	     * This method used to list the english shows. 
+	     * <p>
+		 * @return ModelAndView 
+		 *         returns model to english_Shows page.
+		 */
+		@RequestMapping("/englishShows")
+		public ModelAndView getEnglishShows() {
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				model.put("disc", discService.discList());		
+				return new ModelAndView("english_Shows", model);
+			} catch (UserApplicationException e) {
+				e.printStackTrace();
+				System.out.println(e);	
+				return null;
+			}
+			
+	    }  
+		
+		/**
+		 * <p>
+	     * This method used to list the hindi shows. 
+	     * <p>
+		 * @return ModelAndView
+		 *         returns model to hindi_Shows page.
+		 */
+		@RequestMapping("/hindiShows")
+		public ModelAndView getHindiShows() {
+			Map<String, Object> model = new HashMap<String, Object>();
+			try {
+				model.put("disc", discService.discList());			 
+				return new ModelAndView("hindi_Shows", model);
+			} catch (UserApplicationException e) {
+				e.printStackTrace();
+				System.out.println(e);	
+				return null;
+			}
+			
+	    }	
 }
