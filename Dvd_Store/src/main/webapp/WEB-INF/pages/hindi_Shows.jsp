@@ -24,6 +24,7 @@
                         <p><input type="hidden" id="id" name="id" value="${disc.id}"/></p>
                         <i><strong><p> Show Name: <c:out value="${disc.name}"/></p><strong></i>
                     </div>
+
                     <div style="color:black">
                         <p> Director: <c:out value="${disc.directorName}"/><p>
                         <p> Actor: <c:out value="${disc.actorName}"/></p>

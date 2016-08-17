@@ -14,9 +14,11 @@
      </div>
           <div id="navigation">
       <ul>   
-        <li><a href="#">${pageContext.request.remoteUser}</a></li>
+        <li><div class = "dropdown"><a href="#">${pageContext.request.remoteUser}</a>  
+        <div class="dropdown-content">
+                <a href="login.html">Logout</a>
+        </div></div></li>
         <li><a href="cartList.html" target="iframe_admin">Cart</a></li>
-        <li><a href="login.html">Logout</a><li>
       </ul>
     </div>
      <div id="newNavigation">
@@ -34,9 +36,9 @@
              <li><a href="registerDisc.html" target="iframe_admin">Register Disc</a></li>
              <li><a href="discList.html" target="iframe_admin">List of Discs</a></li>
              <li><a href="userList.html" target="iframe_admin">List of Users</a></li>
-             <li><a href="home.html">Home</a></li>
+             <li><a href="homePage.html">Home</a></li>
          </ul>
      </div>
-       <iframe frameborder="0"  allowtransparency="yes" scrolling="yes" height="500px" width="100%"  name="iframe_admin" style="border:none";></iframe>
+       <iframe frameborder="0"  allowtransparency="yes" scrolling="yes" height="500px" width="100%" name="iframe_admin" style="border:none";></iframe>
 </body>
 </html>

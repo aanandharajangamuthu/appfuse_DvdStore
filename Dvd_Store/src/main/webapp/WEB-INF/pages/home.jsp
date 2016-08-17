@@ -16,9 +16,11 @@
  </div>
      <div id="navigation">
       <ul>   
-        <li><a href="#">${pageContext.request.remoteUser}</a></li>
+        <li><div class = "dropdown"><a href="#">${pageContext.request.remoteUser}</a>  
+        <div class="dropdown-content">
+                <a href="login.html">Logout</a>
+        </div></div></li>
         <li><a href="cartList.html" target="iframe_a">Cart</a></li>
-        <li><a href="login.html">Logout</a><li>
       </ul>
     </div>
     <div id="sub-navigation">
@@ -37,7 +39,6 @@
        <a href="tamilSongs.html" target="iframe_a">Tamil</a>
        <a href="englishSongs.html" target="iframe_a">English</a>
        <a href="hindiSongs.html" target="iframe_a">Hindi</a>
-
      </div>
      </div>
      </li>

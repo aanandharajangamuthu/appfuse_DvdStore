@@ -41,7 +41,7 @@
             </c:forEach>
         </table>
         <br><br>
-        <a href="purchaseDisc.html" target="_top"><input type="button" class="button" value="Purchase"></a><br>
+        <a href="purchaseDisc.html" target="iframe_a"><input type="button" class="button" value="Purchase"></a><br>
        </c:if>
        <br>
     </center>

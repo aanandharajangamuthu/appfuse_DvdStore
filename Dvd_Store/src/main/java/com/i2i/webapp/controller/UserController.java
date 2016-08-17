@@ -112,13 +112,18 @@ public class UserController {
 			    }
 		    }
 		}
-		    return new ModelAndView("homeIndex");
+		    return new ModelAndView("home");
 		
     }
     
     @RequestMapping("/userIndex")
     public ModelAndView getIndex(){
     	return new ModelAndView("homeIndex");
+    }
+    
+    @RequestMapping("/homePage")
+    public ModelAndView handleAdminHomePage() {       
+		return new ModelAndView("home");	
     }
     
  // Category Controller
@@ -485,27 +490,13 @@ public class UserController {
 				System.out.println("entering into Buy Disc");
 				Disc disc = discService.findByDiscId(id);			
 				model.put("BuyDisc", disc);
-				//model.put("BuyDisc", currentUser);
 				return new ModelAndView("buyDisc", model);
 			} catch (UserApplicationException e) {
 				e.printStackTrace();
 				System.out.println(e);		
 			}
 			return null;
-		}
-		
-		/**
-		 * <p> Redirects to purchaseDisc page</P>
-		 * @param user
-		 *        User object 
-		 * @param result
-		 * @return ModelAndView
-		 *         redirects to purchaseDisc page
-		 */
-	/*	@RequestMapping("/purchase")
-		public ModelAndView getPurchase() {
-		    return new ModelAndView("redirect:/purchaseDisc.html");
-		}*/
+		}		
 		
 		/**
 		 * <p> Redirects to purchase order page based on login status of user</p>
