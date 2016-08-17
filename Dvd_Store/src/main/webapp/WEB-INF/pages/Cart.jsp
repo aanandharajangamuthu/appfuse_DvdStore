@@ -12,7 +12,7 @@
 <body>
     <center>
         <br><br><br>
-        <p style="color:white;font-size:25px">Total Amount : <c:out value="${totalAmount}Rs"/></p>
+        <p style="color:#000;font-size:25px">Total Amount : <c:out value="${totalAmount}Rs"/></p>
         <br><br><br>
         <div style="color: green;font-size: 30px">Cart Details</div>
         <br><br>
@@ -32,7 +32,7 @@
                     <tr style="background-color:white;color: black;text-align: center;" height="30px" >
                         <td><c:out value="${cart.disc.getName()}"/></td>
                         <td><c:out value="${cart.disc.getDirectorName()}"/></td>
-                        <td><img src="<c:out value="${cart.disc.getImageUrl()}"/>" alt="image" border=3 height=100 width=100></img></td>
+                        <td><img src="images/<c:out value="${cart.disc.getImageUrl()}"/>" alt="image" border=3 height=100 width=100></img></td>
                         <td><input type="hidden" id="quantity" name="quantity" value="${cart.quantity}"/>${cart.quantity}</td>
                         <td><c:out value="${cart.totalPrice}"/></td>
                         <td><input type="submit" value="Delete"></td> 
