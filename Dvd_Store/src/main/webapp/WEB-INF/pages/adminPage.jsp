@@ -12,25 +12,31 @@
          <h1 id="logo"><a href="#">Fact</a></h1>
          <i><h2 style="color:green">Be a Fanatic and Admire Everything </h2></i>
      </div>
+          <div id="navigation">
+      <ul>   
+        <li><a href="#">${pageContext.request.remoteUser}</a></li>
+        <li><a href="cartList.html" target="iframe_admin">Cart</a></li>
+        <li><a href="login.html">Logout</a><li>
+      </ul>
+    </div>
      <div id="newNavigation">
          <ul>
-             <li><a href="registerLanguage.html">Register Language</a></li>
-             <li><a href="languageList.html">List of Languages</a></li>
-             <li><a href="assignLanguage.html">Assign Language</a></li>
-             <li><a href="assignCategory.html">Assign Category</a></li>
-             <li><a href="registerCategory.html">Register Category</a></li>
-             <li><a href="categoryList.html">List of Categories</a></li>
+             <li><a href="registerLanguage.html" target="iframe_admin">Register Language</a></li>
+             <li><a href="languageList.html" target="iframe_admin">List of Languages</a></li>
+             <li><a href="assignLanguage.html" target="iframe_admin">Assign Language</a></li>
+             <li><a href="assignCategory.html" target="iframe_admin">Assign Category</a></li>
+             <li><a href="registerCategory.html" target="iframe_admin">Register Category</a></li>
+             <li><a href="categoryList.html" target="iframe_admin">List of Categories</a></li>
          </ul>
      </div>
      <div id="sub_newNavigation">
          <ul>
-             <li><a href="registerDisc.html">Register Disc</a></li>
-             <li><a href="discList.html">List of Discs</a></li>
-             <li><a href="userList.html">List of Users</a></li>
-             <li><a href="cartList.html">Cart</a></li>
-             <li><a href="user_home.html">Home</a></li>
-             <li><a href="#">${pageContext.request.remoteUser}</a></li>
+             <li><a href="registerDisc.html" target="iframe_admin">Register Disc</a></li>
+             <li><a href="discList.html" target="iframe_admin">List of Discs</a></li>
+             <li><a href="userList.html" target="iframe_admin">List of Users</a></li>
+             <li><a href="home.html">Home</a></li>
          </ul>
      </div>
+       <iframe frameborder="0"  allowtransparency="yes" scrolling="yes" height="500px" width="100%"  name="iframe_admin" style="border:none";></iframe>
 </body>
 </html>

@@ -65,7 +65,7 @@
         <dao.framework>hibernate</dao.framework>
         <db.name>Dvd_Store</db.name>
         <web.framework>spring</web.framework>
-        <jdbc.password>root</jdbc.password>
+        <jdbc.password>ubuntu</jdbc.password>
 
         <!-- Framework/Plugin versions -->
         <appfuse.version>3.5.0</appfuse.version>

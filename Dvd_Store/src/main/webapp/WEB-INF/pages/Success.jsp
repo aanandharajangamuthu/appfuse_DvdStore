@@ -14,9 +14,17 @@
   <h1 id="logo"><a href="#">Fact</a></h1>
  <i><h2 style="color:green">Be a Fanatic and Admire Everything </h2></i>
  </div>
+  </div>
+     <div id="navigation">
+      <ul>   
+        <li><a href="home.html">Home</a></li>
+        <li><a href="cartList.html" target="iframe_a">Cart</a></li>
+        <li><a href="login.html">Logout</a><li>
+      </ul>
+    </div>
 <br><br><br><br><br><br>
 <center><h1 style = "color:green">Order Successfull!-------</h1></center>
-<iframe frameborder="0"  allowtransparency="yes" scrolling="yes" height="500px" width="100%" name="iframe_b" style="border:none";></iframe>
+<iframe frameborder="0"  allowtransparency="yes" scrolling="yes" height="500px" width="100%" name="iframe_a" style="border:none";></iframe>
 </div>
 </body>
 </html>

@@ -19,11 +19,11 @@
     <form method="post" action="allocateLanguage.html">
     <table width="400px" height="150px">
         <tr>
-            <td style="color:white">Disc Id</td>
+            <td style="color:black">Disc Id</td>
             <td><input type="text" name="discId" /></td>
         </tr>
         <tr>
-            <td style="color:white">Language Id</td>
+            <td style="color:black">Language Id</td>
             <td><input type="text" name="languageId"/></td>
         </tr>
         <tr><td></td><td>

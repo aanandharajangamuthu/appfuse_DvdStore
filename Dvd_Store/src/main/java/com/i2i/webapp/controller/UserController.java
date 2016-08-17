@@ -112,8 +112,13 @@ public class UserController {
 			    }
 		    }
 		}
-		return new ModelAndView("home");
-	
+		    return new ModelAndView("homeIndex");
+		
+    }
+    
+    @RequestMapping("/userIndex")
+    public ModelAndView getIndex(){
+    	return new ModelAndView("homeIndex");
     }
     
  // Category Controller

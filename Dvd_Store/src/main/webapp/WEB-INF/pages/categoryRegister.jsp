@@ -17,7 +17,7 @@
     <form:form id="categoryForm" modelAttribute="category" method="post" action="${categoryRegistration}">
         <table width="400px" height="150px">
             <tr>
-                <td><form:label style="color:white" path="name">Category Name</form:label></td>
+                <td><form:label style="color:black" path="name">Category Name</form:label></td>
                 <td><form:input path="name" /></td>
             </tr>
             <tr><td></td><td>

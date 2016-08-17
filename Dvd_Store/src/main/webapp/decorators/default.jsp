@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="<c:url value="/images/favicon.ico"/>"/>
-    <title><decorator:title/> | <fmt:message key="webapp.name"/></title>
+     <title><decorator:title/> | <fmt:message key="webapp.name"/></title>
     <t:assets type="css"/>
     <decorator:head/>
 </head>
-<body<decorator:getProperty property="body.id" writeEntireProperty="true"/><decorator:getProperty property="body.class" writeEntireProperty="true"/>>
+<!-- <body<decorator:getProperty property="body.id" writeEntireProperty="true"/><decorator:getProperty property="body.class" writeEntireProperty="true"/>>
     <c:set var="currentMenu" scope="request"><decorator:getProperty property="meta.menu"/></c:set>
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="<c:url value='/'/>"><fmt:message key="webapp.name"/></a>
-        </div>
+        </div> 
 
         <%@ include file="/common/menu.jsp" %>
         <c:if test="${pageContext.request.locale.language ne 'en'}">
@@ -31,7 +31,7 @@
                 <fmt:message key="webapp.name"/> in English</a>
             </div>
         </c:if>
-    </div>
+    </div>  -->
 
     <div class="container" id="content">
         <%@ include file="/common/messages.jsp" %>
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <div id="footer" class="container navbar-fixed-bottom">
+ <!--    <div id="footer" class="container navbar-fixed-bottom">
         <span class="col-sm-6 text-left"><fmt:message key="webapp.version"/>
             <c:if test="${pageContext.request.remoteUser != null}">
             | <fmt:message key="user.status"/> ${pageContext.request.remoteUser}
@@ -57,7 +57,7 @@
         <span class="col-sm-6 text-right">
             &copy; <fmt:message key="copyright.year"/> <a href="<fmt:message key="company.url"/>"><fmt:message key="company.name"/></a>
         </span>
-    </div>
+    </div> -->
 <t:assets type="js"/>    
 <%= (request.getAttribute("scripts") != null) ?  request.getAttribute("scripts") : "" %>
 </body>

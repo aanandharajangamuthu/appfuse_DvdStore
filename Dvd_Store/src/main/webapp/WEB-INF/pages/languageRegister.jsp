@@ -17,7 +17,7 @@
 <form:form id="languageForm" modelAttribute="language" method="post" action="${languageRegistration}">
 <table width="400px" height="150px">
 <tr>
-<td><form:label style="color:white" path="name">Language Name</form:label></td>
+<td><form:label style="color:black" path="name">Language Name</form:label></td>
 <td><form:input  path="name"/></td>
 </tr>
 <tr><td></td><td>

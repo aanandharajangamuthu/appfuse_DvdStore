@@ -16,13 +16,15 @@
  </div>
      <div id="navigation">
       <ul>   
-        <li><a href="login.html">${pageContext.request.remoteUser}</a></li>
-        <li><a href="cartList.html">CART</a></li>
+        <li><a href="#">${pageContext.request.remoteUser}</a></li>
+        <li><a href="cartList.html" target="iframe_a">Cart</a></li>
+        <li><a href="login.html">Logout</a><li>
       </ul>
     </div>
     <div id="sub-navigation">
     <ul>
-     <li><div class = "dropdown"><a href="movieList.html">Movies</a>
+    <li><a href="home.html">Home</a><li>
+     <li><div class = "dropdown"><a href="movieList.html" target="iframe_a">Movies</a>
      <div class="dropdown-content">
        <a href="tamilMovies.html" target="iframe_a">Tamil</a>
        <a href="englishMovies.html" target="iframe_a">English</a>
@@ -50,75 +52,6 @@
   </ul>
   </div>
   </div>
-  <div id="main">
-    <div id="content">
-      <div class="box">
-        <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">Theri</span></span><a href="tamilMovies.html"><img src="images/vijay.jpeg" alt="" /></a></div>
-          <div class="rating">
-            <p>RATING</p>
-            <div class="stars">
-              <div class="stars-in"> </div>
-            </div>
-            <span class="comments">12</span> </div>
-        </div>
-        <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">300 Spartans</span></span> <a href="englishMovies.html"><img src="images/spartan.jpeg" alt="" /></a> </div>
-          <div class="rating">
-            <p>RATING</p>
-            <div class="stars">
-              <div class="stars-in"> </div>
-            </div>
-            <span class="comments">12</span> </div>
-        </div>
-        <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">3 Idiots</span></span> <a href="hindiMovies.html"><img src="images/idiots.jpeg" alt="" /></a> </div>
-          <div class="rating">
-            <p>RATING</p>
-            <div class="stars">
-              <div class="stars-in"> </div>
-            </div>
-            <span class="comments">12</span> </div>
-        </div>
-        <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">Aym</span></span> <a href="tamilSongs.html"><img src="images/aym.jpeg" alt="" /></a> </div>
-          <div class="rating">
-            <p>RATING</p>
-            <div class="stars">
-              <div class="stars-in"> </div>
-            </div>
-            <span class="comments">12</span> </div>
-        </div>
-        <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">Beautiful</span></span> <a href="englishSongs.html"><img src="images/eminem.jpeg" alt="" /></a> </div>
-          <div class="rating">
-            <p>RATING</p>
-            <div class="stars">
-              <div class="stars-in"> </div>
-            </div>
-            <span class="comments">12</span> </div>
-        </div>
-        <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">Mohenja Tharo</span></span> <a href="hindiSongs.html"><img src="images/mohenja.jpeg" alt="" /></a> </div>
-          <div class="rating">
-            <p>RATING</p>
-            <div class="stars">
-              <div class="stars-in"> </div>
-            </div>
-            <span class="comments">12</span> </div>
-        </div>
-        <div class="movie last">
-          <div class="movie-image"> <span class="play"><span class="name">Neeya Naana</span></span> <a href="tamilShows.html"><img src="images/neeyanaana.jpeg"" alt="" /></a> </div>
-          <div class="rating">
-            <p>RATING</p>
-            <div class="stars">
-              <div class="stars-in"> </div>
-            </div>
-            <span class="comments">12</span> </div>
-        </div>
-        <div class="cl">&nbsp;</div>
-      </div>      
-</div>
-</div>
+  <iframe frameborder="0"  allowtransparency="yes" scrolling="yes" height="500px" width="100%" src="userIndex.html" name="iframe_a" style="border:none";></iframe>
 </body>
 </html>

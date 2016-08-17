@@ -5,6 +5,11 @@
     <meta name="menu" content="Login"/>
 </head>
 <body id="login">
+ <div id="shell">
+  <div id="header"> 
+  <h1 id="logo"><a href="#">Fact</a></h1>
+ <i><h2 style="color:green">Be a Fanatic and Admire Everything </h2></i>
+ </div>
 
 <form method="post" id="loginForm" action="<c:url value='/j_security_check'/>"
     onsubmit="saveUsername(this);return validateForm(this)" class="form-signin" autocomplete="off">

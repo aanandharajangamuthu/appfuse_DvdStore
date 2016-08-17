@@ -15,6 +15,13 @@
   <h1 id="logo"><a href="#">Fact</a></h1>
  <i><h2 style="color:green">Be a Fanatic and Admire Everything </h2></i>
  </div>
+      <div id="navigation">
+      <ul>   
+        <li><a href="home.html">Home</a></li>
+        <li><a href="cartList.html" target="iframe_a">Cart</a></li>
+        <li><a href="login.html">Logout</a><li>
+      </ul>
+    </div>
 <br><br><br><br><br><br>
 <div align="center" style="color: green;font-size: 30px">Order Details</div>
 <h1 style = "color:black">CustomerName : ${pageContext.request.remoteUser}</h1><br><br>

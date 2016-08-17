@@ -19,11 +19,11 @@
     <form method="post" action="allocateCategory.html">
     <table width="400px" height="150px">
         <tr>
-            <td style="color:white">Disc Id</td>
+            <td style="color:black">Disc Id</td>
             <td><input type="text" name="discId" /></td>
         </tr>
         <tr>
-            <td style="color:white">Category Id</td>
+            <td style="color:black">Category Id</td>
             <td><input type="text" name="categoryId"/></td>
         </tr>
         <tr><td></td><td>
