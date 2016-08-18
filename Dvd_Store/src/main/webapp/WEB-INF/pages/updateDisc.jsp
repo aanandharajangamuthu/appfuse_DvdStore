@@ -13,9 +13,12 @@
     <br><br>
     <div style="color: green;font-size: 30px">Disc Registration Form</div>
     <br><br>
-    <c:url var="discRegistration" value="saveDisc.html"/>
-    <form:form id="discForm" modelAttribute="disc" method="post" action="${discRegistration}">
+    <form:form id="discForm" modelAttribute="disc" method="post" action="updateDiscDetails.html">
         <table width="400px" height="150px">
+            <tr>
+                <td><form:label style="color:black" path="name">Disc Id</form:label></td>
+                <td><form:input required="required" path="id" /></td>
+            </tr>
             <tr>
                 <td><form:label style="color:black" path="name">Disc Movie Name</form:label></td>
                 <td><form:input required="required" path="name" /></td>
@@ -43,7 +46,7 @@
              <tr>
             </tr>
             <tr><td></td><td>
-                <input type="submit" value="Add Disc" />
+                <input type="submit" value="Update Disc" />
             </td></tr>
        </table>
    </form:form>

@@ -68,7 +68,7 @@ public interface DiscDao extends GenericDao<Disc, Long> {
      *         if there is any error occurs while updating
      * 
      */
-    public void updateDiscById(Disc disc) throws UserApplicationException;
+    public void updateByDisc(Disc disc) throws UserApplicationException;
     
     /**
      * Allocates category to a set of discs

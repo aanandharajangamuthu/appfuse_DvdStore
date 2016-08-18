@@ -21,7 +21,7 @@
                 <td><form:input path="name" /></td>
             </tr>
             <tr><td></td><td>
-                <input type="submit" value="Register" />
+                <input type="submit" value="Add Category" />
             </td></tr>
         </table>
     </form:form>

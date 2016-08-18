@@ -92,9 +92,15 @@ public class DiscDaoHibernate extends GenericDaoHibernate<Disc,Long> implements 
 	}
 
 	@Override
-	public void updateDiscById(Disc disc) throws UserApplicationException {
-		// TODO Auto-generated method stub
-		
+	public void updateByDisc(Disc disc) throws UserApplicationException {
+		Session session = getSession();    	
+        try {           
+            session.update(disc);            
+        } catch(HibernateException e) {
+            throw new UserApplicationException("Could not able to Update Disc for this id "+disc.getId(), e);
+        } finally {
+        	session.flush();
+        }		
 	}
 
 	@Override

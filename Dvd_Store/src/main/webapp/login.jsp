@@ -36,13 +36,12 @@
         <fmt:message key='button.login'/>
     </button>
 </form>
-
+<div align=center>
 <p>
     <fmt:message key="login.signup">
         <fmt:param><c:url value="/signup"/></fmt:param>
     </fmt:message>
 </p>
-
 <c:set var="scripts" scope="request">
 <%@ include file="/scripts/login.js"%>
 </c:set>
@@ -50,5 +49,5 @@
 <p><fmt:message key="login.passwordHint"/></p>
 
 <p><fmt:message key="updatePassword.requestRecoveryTokenLink"/></p>
-
+</div>
 </body>

@@ -41,8 +41,13 @@ public class DiscServiceImpl implements DiscService {
 	@Override
 	public void updateByDiscId(int id, String name, String directorName, String actorName, String imageUrl, int stock,
 			int price) throws UserApplicationException {
-		// TODO Auto-generated method stub
-		
+		    Disc disc = findByDiscId(id);
+		    disc.setName(name);
+		    disc.setDirectorName(directorName);
+		    disc.setActorName(actorName);
+		    disc.setImageUrl(imageUrl);
+		    disc.setStock(stock);
+		    discDao.updateByDisc(disc);
 	}
 
 	@Override

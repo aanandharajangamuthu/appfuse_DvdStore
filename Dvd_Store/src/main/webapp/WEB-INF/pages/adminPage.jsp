@@ -34,8 +34,9 @@
      <div id="sub_newNavigation">
          <ul>
              <li><a href="registerDisc.html" target="iframe_admin">Register Disc</a></li>
+             <li><a href="update_disc.html" target="iframe_admin">Update Disc</a></li>             
              <li><a href="discList.html" target="iframe_admin">List of Discs</a></li>
-             <li><a href="userList.html" target="iframe_admin">List of Users</a></li>
+             <li><a href="admin/users.html" target="iframe_admin">List of Users</a></li>
              <li><a href="homePage.html">Home</a></li>
          </ul>
      </div>

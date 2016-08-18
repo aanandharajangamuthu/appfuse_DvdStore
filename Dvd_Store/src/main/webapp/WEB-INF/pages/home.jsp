@@ -18,7 +18,7 @@
       <ul>   
         <li><div class = "dropdown"><a href="#">${pageContext.request.remoteUser}</a>  
         <div class="dropdown-content">
-                <a href="login.html">Logout</a>
+                <a href="logout.jsp">Logout</a>
         </div></div></li>
         <li><a href="cartList.html" target="iframe_a">Cart</a></li>
       </ul>
